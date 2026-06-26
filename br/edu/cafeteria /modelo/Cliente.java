@@ -18,7 +18,7 @@ public class Cliente {
         return cpf;
     }
 
-    public String getsaldoXP() {
+    public int getsaldoXP() {
         return saldoXP;
     }
 
