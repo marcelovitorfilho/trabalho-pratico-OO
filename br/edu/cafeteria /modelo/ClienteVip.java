@@ -7,13 +7,10 @@ public class ClienteVip extends Cliente {
         
     }
 
-    @override
+    @Override
     public int calcularPontosXP(double valorCompra) {
         return (int) (valorCompra * 2); // Clientes VIP ganham o dobro de pontos XP
     }
-
-
-
 
    
 
