@@ -38,9 +38,34 @@ public class main {
             }
             return Math.max(0.0, total - descontoManual);
         }
-        public void finalizarPedido 
-   
+        public void finalizarPedido(boolean UsarXpComoPagamento) throws EstoqueInsuficienteException{
+            double valorFinal = calcularValorFinal();
+
+            if (UsarXpComoPagamento){
+                if (cliente != null){
+                    cliente.pagarComXp(valorFinal);
+                }else{
+                    throw new PontosInsuficientesException("Clientes casuais nao podem usar o beneficio de XP ")
+                }
+            }
+            for (ItemPedido item : itens) {
+                item.getProduto().baixarEstoque(item.getQuantidade());
+        }
+    if (!usarXpComoPagamento && cliente != null) {
+            cliente.calcularEAdicionarXP(valorFinal);
+        }
+    }
+    public void aplicarDescontoManual(double valor) {
+        this.descontoManual = valor;
+    }
+    public List<ItemPedido> getItens(){ 
+        return this.itens; 
+    }
+    public int getNumeroIdentificacao(){ 
+        return this.numeroIdentificacao; 
+    }
+        }
     }
 
-}
+
     
