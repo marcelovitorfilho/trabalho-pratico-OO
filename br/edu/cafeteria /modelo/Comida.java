@@ -1,4 +1,5 @@
 package br.edu.cafeteria.modelo;
+import br.edu.cafeteria.modelo.Produto;
 
 public class Comida extends Produto {
     private String tempoPreparoMinutos;
