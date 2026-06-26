@@ -1,4 +1,4 @@
-package br.edu.cafeteria.modelo;
+package br.edu.cafeteria.app;
 
 import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
 import br.edu.cafeteria.excecao.PontosInsuficientesException;
@@ -31,7 +31,15 @@ public class Pedido {
         }
         itens.add(new itemPedido(p,quantidade));
         
-        public 
+        public double calcularValorTotal(){
+            double total = 0.0;
+            for (itemPedido item : itens){
+                total += itemPedido.getSubtotal();
+            }
+            return Math.max(0.0, total - descontoManual);
+        }
+        public void finalizarPedido 
+   
     }
 
 }
