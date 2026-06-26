@@ -14,11 +14,11 @@ public class Cliente {
         return nome;
     }
 
-    public String getcpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public int getsaldoXP() {
+    public int getSaldoXP() {
         return saldoXP;
     }
 
