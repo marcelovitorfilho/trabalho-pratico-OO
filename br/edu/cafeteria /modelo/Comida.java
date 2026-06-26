@@ -14,11 +14,9 @@ public class comida extends Produto {
         return tempoPreparoMinutos;
     }
 
-    public double getPreco() {
-        return preco;
+    public boolean isVegano() {
+        return vegano;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
+
 }
