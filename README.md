@@ -1,6 +1,6 @@
 # trabalho-pr-tico-OO
 
-Trabalho prático de Orientação a Objetos - 2026.1 
+Trabalho prático de Orientação a Objetos - 2026.1 \n
 Universidade de Brasília - Professor André Lanna
 
 Alunos:
