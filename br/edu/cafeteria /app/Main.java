@@ -5,7 +5,7 @@ import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+public class Pedido {
     //============================================
     // SISTEMA DE VENDAS - Cliente casual 
     // ===========================================
@@ -30,7 +30,7 @@ public class main {
             throw new EstoqueInsuficienteException("EStoque insuficiente para " + p.getNome());
         }
         itens.add(new itemPedido(p,quantidade));
-        
+    }
         public double calcularValorTotal(){
             double total = 0.0;
             for (itemPedido item : itens){
@@ -38,17 +38,17 @@ public class main {
             }
             return Math.max(0.0, total - descontoManual);
         }
-        public void finalizarPedido(boolean UsarXpComoPagamento) throws EstoqueInsuficienteException{
+        public void finalizarPedido(boolean UsarXpComoPagamento) throws EstoqueInsuficienteException, PontosInsuficientesException{
             double valorFinal = calcularValorFinal();
 
             if (UsarXpComoPagamento){
                 if (cliente != null){
                     cliente.pagarComXp(valorFinal);
                 }else{
-                    throw new PontosInsuficientesException("Clientes casuais nao podem usar o beneficio de XP ")
+                    throw new PontosInsuficientesException("Clientes casuais nao podem usar o beneficio de XP ");
                 }
             }
-            for (ItemPedido item : itens) {
+            for (itemPedido item : itens) {
                 item.getProduto().baixarEstoque(item.getQuantidade());
         }
     if (!usarXpComoPagamento && cliente != null) {
@@ -65,7 +65,7 @@ public class main {
         return this.numeroIdentificacao; 
     }
         }
-    }
+    
 
 
     
