@@ -1,4 +1,4 @@
-# trabalho-pr-tico-OO
+# Trabalho-prático-OO
 
 **Universidade de Brasília (UnB)**
 
