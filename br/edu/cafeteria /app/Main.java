@@ -5,7 +5,7 @@ import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pedido {
+public class main {
     //============================================
     // SISTEMA DE VENDAS - Cliente casual 
     // ===========================================
