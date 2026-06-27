@@ -1,6 +1,19 @@
 package br.edu.cafeteria.app;
 
 import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
+import br.edu.cafeteria.modelo.Atendente;
+import br.edu.cafeteria.modelo.Bebida;
+import br.edu.cafeteria.modelo.Cliente;
+import br.edu.cafeteria.modelo.ClienteStandard;
+import br.edu.cafeteria.modelo.ClienteVip;
+import br.edu.cafeteria.modelo.Comida;
+import br.edu.cafeteria.modelo.itemPedido;
+import br.edu.cafeteria.modelo.Pedido;
+import br.edu.cafeteria.modelo.Produto;
+import br.edu.cafeteria.servico.CadastroClientes;
+import br.edu.cafeteria.servico.CadastroProdutos;
+import br.edu.cafeteria.servico.PromocaoEventoGeek;
+import br.edu.cafeteria.servico.Promocional;
 import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +39,12 @@ ClienteStandard Lucas = new ClienteStandard("Lucas Renato", "222.222.444-66", "3
 ClienteVip Marcelo = new ClienteVip("Marcelo Vitor", "333.444.555-66", "350");
 ClienteVip Thiago = new ClienteVip("Thiago Sousa", "444.555.666-77", "400");
 
+cadastro.cadastrarCliente(Bruno);
+cadastro.cadastrarCliente(Bernardo);
+cadastro.cadastrarCliente(Lucas);
+cadastro.cadastrarCliente(Marcelo);
+cadastro.cadastrarCliente(Thiago);
+
 Atendente profissional1 = new Atendente("André", 01);
 Atendente profissional2 = new Atendente("Cristina", 02);
 
@@ -35,7 +54,9 @@ Pedido pedido2 = new Pedido(002, profissional2, Marcelo);
 
 System.out.println("Bem-vindo à Cafeteria Geek Byte & Brew!");
 System.out.println("Se já é cliente, coloque seu CPF para acessar o cardápio e fazer seu pedido. Caso contrário, cadastre-se como cliente.");
-System.out.println("Digite 1 caso já tenha cadastro ou 2 para se cadastrar como cliente:");
+System.out.println("Digite 1 caso já tenha cadastro\nDigite 2 para se cadastrar como cliente\nDigite 3 para fazer compra sem cadastro");
+opcao = scanner.nextInt();
+scanner.nextLine();
 switch (opcao) {
     case 1:
         System.out.println("Digite seu CPF:");
@@ -53,6 +74,9 @@ switch (opcao) {
         System.out.println("Digite seu CPF:");
         String novoCpf = scanner.nextLine();
         System.out.println("Você está cadastrado, você é nosso mais novo cliente Standard. Bem-vindo, " + nome + "! Aqui está o nosso cardápio:");
+        break;
+    case 3:
+        System.out.println("Você optou por fazer uma compra sem cadastro. Aqui está o nosso cardápio:");
         break;
     default:
         System.out.println("Opção inválida. Por favor, escolha uma opção válida.");
