@@ -1,6 +1,6 @@
 package br.edu.cafeteria.modelo;
 
-public class item.Pedido {
+public class itemPedido {
         private final Produto produto;
         private int qtd; // quantidade de itens pedidos pelo cliente
 
@@ -24,7 +24,7 @@ public class item.Pedido {
             }
             this.qtd = qtd;
         }
-        public Produto get.Produto(){
+        public Produto getProduto(){
             return produto;
         }
         public int getQtd(){

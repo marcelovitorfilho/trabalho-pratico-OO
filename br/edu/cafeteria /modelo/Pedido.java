@@ -1,4 +1,4 @@
-package br.edu.cafeteria.app;
+package br.edu.cafeteria.modelo;
 
 import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
 import br.edu.cafeteria.excecao.PontosInsuficientesException;
