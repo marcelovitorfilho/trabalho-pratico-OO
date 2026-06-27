@@ -1,6 +1,6 @@
 package br.edu.cafeteria.modelo;
 
-import br.edu.cafeteria.excecao.EstoqueInsuficienteException
+import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
 
 public class Produto {
     private String codigo;
