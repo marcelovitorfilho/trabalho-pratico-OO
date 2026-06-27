@@ -4,6 +4,9 @@ import br.edu.cafeteria.excecao.EstoqueInsuficienteException;
 import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+Scanner scanner = new Scanner(System.in);
+int opcao = 0;
 
 public class Main {
 public static void main(String[] args){
@@ -20,8 +23,8 @@ Bebida chaDoMago = new Bebida("B003", "Chá mágico do Mago Supremo", 13.00, 10,
 ClienteStandard Bruno = new ClienteStandard("Bruno Vieira", "111.111.222-33", "10");
 ClienteStandard Bernardo = new ClienteStandard("Bernardo Galvão", "402.888.745-00", "20");
 ClienteStandard Lucas = new ClienteStandard("Lucas Renato", "222.222.444-66", "30");
-ClienteVip Marcelo = new.ClienteVip("Marcelo Vitor", "333.444.555-66", "350");
-ClienteVip Thiago = new.ClienteVip("Thiago Sousa", "444.555.666-77", "400");
+ClienteVip Marcelo = new ClienteVip("Marcelo Vitor", "333.444.555-66", "350");
+ClienteVip Thiago = new ClienteVip("Thiago Sousa", "444.555.666-77", "400");
 
 Atendente profissional1 = new Atendente("André", 01);
 Atendente profissional2 = new Atendente("Cristina", 02);
