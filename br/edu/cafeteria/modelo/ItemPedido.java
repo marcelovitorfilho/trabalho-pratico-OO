@@ -1,16 +1,16 @@
 package br.edu.cafeteria.modelo;
 
-public class itemPedido {
+public class ItemPedido {
     private final Produto produto;
-    private int qtd; // quantidade de itens pedidos pelo cliente
+    private int qtd;
 
-    public ItemPedido(Produto produto, int qtd){
-        
-        if(produto == null){
-            throw new IllegalArgumentException("O produto não pode ser igual a 0");
+    public ItemPedido(Produto produto, int qtd) {
+        if (produto == null) {
+            throw new IllegalArgumentException("O produto não pode ser nulo.");
         }
-        if (qtd <= 0){
-            throw new IllegalArgumentException("A quantidade deve ser maior que 0");
+
+        if (qtd <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que 0.");
         }
 
         this.produto = produto;
@@ -21,23 +21,24 @@ public class itemPedido {
         return produto.getPrecoBase() * qtd;
     }
 
-    public void setQuantidade(int quantidade){
-        if(qtd <= 0){
+    public void setQuantidade(int quantidade) {
+        if (quantidade <= 0) {
             throw new IllegalArgumentException("A quantidade deve ser maior do que 0.");
         }
-        this.qtd = qtd;
+
+        this.qtd = quantidade;
     }
 
-    public Produto getProduto(){
+    public Produto getProduto() {
         return produto;
     }
 
-    public int getQtd(){
+    public int getQtd() {
         return qtd;
     }
 
-    @Override // redefinindo um método que ja existe em uma classe mãe
-    public String toString(){
+    @Override
+    public String toString() {
         return String.format("%s x %d | Subtotal: R$ %.2f", produto.getNome(), qtd, getSubtotal());
     }
 }
