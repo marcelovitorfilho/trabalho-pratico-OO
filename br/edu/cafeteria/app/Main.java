@@ -5,12 +5,12 @@ import br.edu.cafeteria.excecao.PontosInsuficientesException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-Scanner scanner = new Scanner(System.in);
-int opcao = 0;
 
 public class Main {
 public static void main(String[] args){
 
+    Scanner scanner = new Scanner(System.in);
+    int opcao = 0;
 CadastroProdutos cardapio = new CadastroProdutos();
 
 Comida LembasBread = new Comida("C001", "Lembas Bread", 12.00, 10, 30, false, false);
@@ -82,8 +82,9 @@ switch (opcao) {
         pedido2.adicionarItem(chaDoMago, 1);
     case 7:
         break;
-    default:
+        default:
         System.out.println("Opção inválida. Por favor, escolha uma opção válida do cardápio.");
-}
-}
+        }
+    scanner.close();
+    }
 }
