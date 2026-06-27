@@ -21,11 +21,11 @@ public class Main {
         Bebida pocaoDeMana = new Bebida("B002", "Poção de Mana", 9.00, 10, "M", 0);
         Bebida chaDoMago = new Bebida("B003", "Chá mágico do Mago Supremo", 13.00, 10, "G", 0);
 
-        ClienteStandard Bruno = new ClienteStandard("Bruno Vieira", "111.111.222-33", "10");
-        ClienteStandard Bernardo = new ClienteStandard("Bernardo Galvão", "402.888.745-00", "20");
-        ClienteStandard Lucas = new ClienteStandard("Lucas Renato", "222.222.444-66", "30");
-        ClienteVip Marcelo = new ClienteVip("Marcelo Vitor", "333.444.555-66", "350");
-        ClienteVip Thiago = new ClienteVip("Thiago Sousa", "444.555.666-77", "400");
+        ClienteStandard Bruno = new ClienteStandard("Bruno Vieira", "111.111.222-33", 10);
+        ClienteStandard Bernardo = new ClienteStandard("Bernardo Galvão", "402.888.745-00", 20);
+        ClienteStandard Lucas = new ClienteStandard("Lucas Renato", "222.222.444-66", 30);
+        ClienteVip Marcelo = new ClienteVip("Marcelo Vitor", "333.444.555-66", 350);
+        ClienteVip Thiago = new ClienteVip("Thiago Sousa", "444.555.666-77", 400);
 
         cadastro.cadastrarCliente(Bruno);
         cadastro.cadastrarCliente(Bernardo);

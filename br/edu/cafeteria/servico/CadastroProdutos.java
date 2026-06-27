@@ -22,8 +22,8 @@ public class CadastroProdutos {
         for (Produto produto : produtos) {
             if (produto.getCodigo().equals(codigo)) {
                 return produto;
+            }
         }
-
         return null;
     }
     //DELETE//
@@ -35,8 +35,8 @@ public class CadastroProdutos {
         }
 
         produtos.remove(produto);
-        }
     }
+
     //UPDATE//
     public void atualizarProduto(String codigo, Produto produtoAtualizado){
         for (int i = 0; i < produtos.size(); i++) {

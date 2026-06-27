@@ -23,8 +23,8 @@ public class CadastroClientes{
         for (Cliente cliente : clientes) {
             if (cliente.getCpf().equals(cpf)) {
                 return cliente;
+            }
         }
-
         return null;
     }
     //DELETE//
@@ -36,8 +36,8 @@ public class CadastroClientes{
         }
 
         clientes.remove(cliente);
-        }
     }
+    
     //UPDATE//
     public void atualizarCliente(String cpf, Cliente clienteAtualizado) {
         for (int i = 0; i < clientes.size(); i++) {

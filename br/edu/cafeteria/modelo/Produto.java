@@ -8,18 +8,21 @@ public class Produto {
     private double precoBase;
     private int quantidadeEstoque;
 
-public Produto(String codigo, String nome, double precoBase, int quantidadeEstoque) {
+    public Produto(String codigo, String nome, double precoBase, int quantidadeEstoque) {
         this.codigo = codigo;
         this.nome = nome;
         this.precoBase = precoBase;
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-public void baixarEstoque(int quantidade) throws EstoqueInsuficienteException{
-    if (this.quantidadeEstoque < quantidade){
-        throw new EstoqueInsuficienteException("Estoque se encontra insuficiente para: " + nome);
+    public void baixarEstoque(int quantidade) throws EstoqueInsuficienteException{
+        if (this.quantidadeEstoque < quantidade){
+            throw new EstoqueInsuficienteException("Estoque se encontra insuficiente para: " + nome);
+        }
+
+        this.quantidadeEstoque -= quantidade;
     }
-}
+
     public String getCodigo() {
         return codigo;
     }
