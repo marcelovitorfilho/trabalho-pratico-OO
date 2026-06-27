@@ -2,7 +2,7 @@ package br.edu.cafeteria.modelo;
 import br.edu.cafeteria.modelo.Produto;
 
 public class Bebida extends Produto {
-    private String tamanho;
+    private String tamanho; // P, M ou G
     private double cafeinaMg;
 
     public Bebida(String codigo, String nome, double precoBase, int quantidadeEstoque, String tamanho, double cafeinaMg) {
