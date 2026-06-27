@@ -1,8 +1,8 @@
 package br.edu.cafeteria.servico;
 
 import java.util.ArrayList;
-
 import br.edu.cafeteria.modelo.Cliente;
+import br.edu.cafeteria.excecao.PontosInsuficientesException;
 
 public class CadastroClientes{
     private ArrayList<Cliente> clientes;
