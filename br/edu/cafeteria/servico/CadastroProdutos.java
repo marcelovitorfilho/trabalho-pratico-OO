@@ -9,7 +9,7 @@ public class CadastroProdutos {
     public CadastroProdutos() {
         this.produtos = new ArrayList<>();
     }
-    //CREATE//
+    //CREATE
     public void cadastrarProduto(Produto produto) {
         if (buscarProdutoPorCodigo(produto.getCodigo()) != null) {
             throw new IllegalArgumentException("Já existe um produto cadastrado com esse código.");
@@ -17,7 +17,7 @@ public class CadastroProdutos {
 
         produtos.add(produto);
     }
-    //READ//
+    //READ
     public Produto buscarProdutoPorCodigo(String codigo){
         for (Produto produto : produtos) {
             if (produto.getCodigo().equals(codigo)) {
@@ -26,7 +26,7 @@ public class CadastroProdutos {
         }
         return null;
     }
-    //DELETE//
+    //DELETE
     public void removerProdutoPorCodigo(String codigo){
         Produto produto = buscarProdutoPorCodigo(codigo);
 
@@ -37,7 +37,7 @@ public class CadastroProdutos {
         produtos.remove(produto);
     }
 
-    //UPDATE//
+    //UPDATE
     public void atualizarProduto(String codigo, Produto produtoAtualizado){
         for (int i = 0; i < produtos.size(); i++) {
             if (produtos.get(i).getCodigo().equals(codigo)) {

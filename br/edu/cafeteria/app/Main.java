@@ -44,17 +44,18 @@ public class Main {
         System.out.println("Digite 1 caso já tenha cadastro\nDigite 2 para se cadastrar como cliente\nDigite 3 para fazer compra sem cadastro");
         opcao = scanner.nextInt();
         scanner.nextLine();
+        
         switch (opcao) {
             case 1:
                 System.out.println("Digite seu CPF:");
                 String cpf = scanner.nextLine();
-                Cliente cliente = cardapio.buscarClientePorCPF(cpf);
+                Cliente cliente = cadastroClientes.buscarClientePorCpf(cpf);
                 if (cliente != null) {
                     System.out.println("Bem-vindo, " + cliente.getNome() + "! Aqui está o nosso cardápio:");
-                    break;
                 } else {
                     System.out.println("CPF não encontrado. Por favor, cadastre-se como cliente.");
                 }
+                break;
             case 2:
                 System.out.println("Digite seu nome:");
                 String nome = scanner.nextLine();

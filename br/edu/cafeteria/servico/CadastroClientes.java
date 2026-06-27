@@ -10,7 +10,7 @@ public class CadastroClientes{
     public CadastroClientes() {
         this.clientes = new ArrayList<>();
     }
-    //CREATE//
+    //CREATE
     public void cadastrarCliente(Cliente cliente) {
         if (buscarClientePorCpf(cliente.getCpf()) != null) {
             throw new IllegalArgumentException("Já existe um cliente cadastrado com esse CPF.");
@@ -18,7 +18,7 @@ public class CadastroClientes{
 
         clientes.add(cliente);
     }
-    //READ//
+    //READ
     public Cliente buscarClientePorCpf(String cpf) {
         for (Cliente cliente : clientes) {
             if (cliente.getCpf().equals(cpf)) {
@@ -27,7 +27,7 @@ public class CadastroClientes{
         }
         return null;
     }
-    //DELETE//
+    //DELETE
     public void removerClientePorCpf(String cpf) {
         Cliente cliente = buscarClientePorCpf(cpf);
 
@@ -38,7 +38,7 @@ public class CadastroClientes{
         clientes.remove(cliente);
     }
     
-    //UPDATE//
+    //UPDATE
     public void atualizarCliente(String cpf, Cliente clienteAtualizado) {
         for (int i = 0; i < clientes.size(); i++) {
             if (clientes.get(i).getCpf().equals(cpf)) {
