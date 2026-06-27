@@ -33,8 +33,8 @@ public class Main {
         cadastro.cadastrarCliente(Marcelo);
         cadastro.cadastrarCliente(Thiago);
 
-        Atendente profissional1 = new Atendente("André", 01);
-        Atendente profissional2 = new Atendente("Cristina", 02);
+        Atendente profissional1 = new Atendente("André", 001);
+        Atendente profissional2 = new Atendente("Cristina", 002);
 
         Pedido pedido1 = new Pedido(001, profissional1, Bruno);
         Pedido pedido2 = new Pedido(002, profissional2, Marcelo);
