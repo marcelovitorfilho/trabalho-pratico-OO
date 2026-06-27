@@ -1,4 +1,7 @@
 package br.edu.cafeteria.modelo;
+
+import br.edu.cafeteria.excecao.PontosInsuficientesException;
+
 public class Cliente {
     private String nome;
     private String cpf;
