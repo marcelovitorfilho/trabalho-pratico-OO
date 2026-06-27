@@ -9,16 +9,4 @@ public class CadastroProdutos {
     public CadastroProdutos() {
         this.produtos = new ArrayList<>();
     }
-
-    public void cadastrarProduto(Produto produto) {
-
-        for (Produto p : produtos) {
-
-            if (p.getCodigo().equals(produto.getCodigo())) {
-                throw new IllegalArgumentException("Já existe um produto com esse código.");
-                }
-            }
-
-        produtos.add(produto);
-    }
 }
