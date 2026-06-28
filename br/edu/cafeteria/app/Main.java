@@ -78,6 +78,9 @@ public class Main {
                 cadastroClientes.cadastrarCliente(clientePedido);
 
                 System.out.println("Você está cadastrado como cliente Standard. Bem-vindo, " + nome + "!");
+                System.out.println("Pressione Enter para continuar para o cardápio...");
+                scanner.nextLine();
+                
                 break;
 
             case 3:
@@ -153,8 +156,10 @@ public class Main {
                 try {
                     pedido.adicionarProduto(produtoEscolhido, quantidade);
                     System.out.println("Produto adicionado ao pedido.");
-                } catch (EstoqueInsuficienteException | IllegalArgumentException erro) {
+                catch (EstoqueInsuficienteException | IllegalArgumentException erro) {
                     System.out.println("Erro ao adicionar produto: " + erro.getMessage());
+                    System.out.println("Pressione Enter para voltar ao cardápio...");
+                    scanner.nextLine();
                 }
             }
         }

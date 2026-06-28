@@ -6,10 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    //============================================
-    // SISTEMA DE VENDAS - Pedido
-    // ===========================================
-
     private static int proximoNumero = 1000; // gerador sequencial automatico exigido
 
     private int numeroIdentificacao;
