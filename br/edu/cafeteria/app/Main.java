@@ -144,7 +144,7 @@ public class Main {
                     System.out.println("Opção inválida. Escolha uma opção válida do cardápio.");
                     break;
             }
-                                                   
+
             if (produtoEscolhido != null) {
                 System.out.println("Digite a quantidade:");
                 int quantidade = scanner.nextInt();
@@ -208,7 +208,6 @@ public class Main {
         } catch (EstoqueInsuficienteException | PontosInsuficientesException erro) {
             System.out.println("Erro ao finalizar pedido: " + erro.getMessage());
         }
-
         scanner.close();
     }
 }
