@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        String continuar;
 
         CadastroProdutos cardapio = new CadastroProdutos();
         CadastroClientes cadastroClientes = new CadastroClientes();
@@ -41,9 +42,12 @@ public class Main {
 
         Atendente profissional1 = new Atendente("André", "001");
 
+        System.out.println("Bem-vindo à Cafeteria Geek Byte & Brew!");
+       
+        do{
+        
         Cliente clientePedido = null;
 
-        System.out.println("Bem-vindo à Cafeteria Geek Byte & Brew!");
         System.out.println("Digite 1 caso já tenha cadastro");
         System.out.println("Digite 2 para se cadastrar como cliente");
         System.out.println("Digite 3 para fazer compra sem cadastro");
@@ -223,5 +227,5 @@ public class Main {
         System.out.println("Agradeço pela compra. Até logo!");
         scanner.close();
     }
-
+}
 
