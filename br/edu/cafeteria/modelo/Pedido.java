@@ -9,7 +9,7 @@ public class Pedido {
     private static int proximoNumero = 1000; // gerador sequencial automatico exigido
 
     private int numeroIdentificacao;
-    private Atendente atendente;
+    private String atendente;
     private Cliente cliente; // pode ser Standard, VIP ou null para compra casual
     private List<ItemPedido> itens;
     private double descontoManual;
@@ -29,11 +29,33 @@ public class Pedido {
     }
 
     public void adicionarProduto(Produto produto, int quantidade) throws EstoqueInsuficienteException {
-        if (produto.getQuantidadeEstoque() < quantidade) {
+        if (produto == null) {
+            throw new IllegalArgumentException("O produto não pode ser nulo.");
+        }
+
+        if (quantidade <= 0) {
+            throw new IllegalArgumentException("A quantidade deve ser maior que 0.");
+        }
+
+        ItemPedido itemExistente = buscarItemPorProduto(produto);
+
+        int quantidadeJaNoPedido = 0;
+
+        if (itemExistente != null) {
+            quantidadeJaNoPedido = itemExistente.getQtd();
+        }
+
+        int quantidadeTotalDesejada = quantidadeJaNoPedido + quantidade;
+
+        if (produto.getQuantidadeEstoque() < quantidadeTotalDesejada) {
             throw new EstoqueInsuficienteException("Estoque insuficiente para " + produto.getNome());
         }
 
-        itens.add(new ItemPedido(produto, quantidade));
+        if (itemExistente != null) {
+            itemExistente.setQuantidade(quantidadeTotalDesejada);
+        } else {
+            itens.add(new ItemPedido(produto, quantidade));
+        }
     }
 
     public void adicionarItem(Produto produto) throws EstoqueInsuficienteException { // sobrecarga
@@ -76,6 +98,16 @@ public class Pedido {
         }
     }
 
+    private ItemPedido buscarItemPorProduto(Produto produto) {
+        for (ItemPedido item : itens) {
+            if (item.getProduto().getCodigo().equals(produto.getCodigo())) {
+                return item;
+            }
+        }
+
+        return null;
+    }
+    
     public void aplicarDescontoManual(double valor) {
         this.descontoManual = valor;
     }
