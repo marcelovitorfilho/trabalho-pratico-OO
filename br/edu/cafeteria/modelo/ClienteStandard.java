@@ -7,7 +7,7 @@ public class ClienteStandard extends Cliente {
     }
 
     @Override
-    public int calcularPontosXP(double valorCompra) { //polifomrismo por sobreescrita
+    public int calcularPontosXP(double valorCompra) { //poliformismo por sobrescrita
         return (int) valorCompra; // 1 ponto para cada R$1,00 gasto
     }
 }
