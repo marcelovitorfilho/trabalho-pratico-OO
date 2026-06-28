@@ -2,7 +2,7 @@ package br.edu.cafeteria.modelo;
 
 import br.edu.cafeteria.excecao.PontosInsuficientesException;
 
-public class Cliente {
+public abstract class Cliente {
     private String nome;
     private String cpf;
     private int saldoXP;
@@ -25,10 +25,8 @@ public class Cliente {
         return saldoXP;
     }
 
-    public int calcularPontosXP(double valorCompra) {
-        return 0; 
-    }
-
+    public abstract int calcularPontosXP(double valorCompra);
+        
     public void adicionarXP(int pontos) {
         this.saldoXP += pontos;
     }
