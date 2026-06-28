@@ -17,6 +17,6 @@ public class ClienteVip extends Cliente {
             throw new PontosInsuficientesException("XP insuficiente para pagar o pedido.");
         }
 
-        saldoXP -= pontosNecessarios;
+        debitarXP(pontosNecessarios);
     }
 }

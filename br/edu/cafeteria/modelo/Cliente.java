@@ -36,6 +36,12 @@ public abstract class Cliente {
         int pontos = calcularPontosXP(valorCompra);
         adicionarXP(pontos);
     }
+    protected void debitarXP(int pontos) throws PontosInsuficientesException {
+        if (pontos > saldoXP) {
+            throw new PontosInsuficientesException("Saldo de pontos insuficiente.");
+        }
+        this.saldoXP -= pontos;
+    }
 
     
 
