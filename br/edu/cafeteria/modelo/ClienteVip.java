@@ -7,7 +7,7 @@ public class ClienteVip extends Cliente {
     }
 
     @Override
-    public int calcularPontosXP(double valorCompra) {
+    public int calcularPontosXP(double valorCompra) { //polifomrismo por sobreescrita
         return (int) (valorCompra * 2); // Clientes VIP ganham o dobro de pontos XP
     }
     public void pagarComXp(double valorCompra) throws PontosInsuficientesException {

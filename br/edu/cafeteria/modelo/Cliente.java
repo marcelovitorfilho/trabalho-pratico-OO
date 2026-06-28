@@ -25,7 +25,8 @@ public abstract class Cliente {
         return saldoXP;
     }
 
-    public abstract int calcularPontosXP(double valorCompra);
+    public abstract int calcularPontosXP(double valorCompra)
+        
         
     public void adicionarXP(int pontos) {
         this.saldoXP += pontos;
