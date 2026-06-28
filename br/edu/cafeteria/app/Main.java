@@ -208,7 +208,8 @@ public class Main {
         } catch (EstoqueInsuficienteException | PontosInsuficientesException erro) {
             System.out.println("Erro ao finalizar pedido: " + erro.getMessage());
         }
+
         scanner.close();
     }
 }
-```
+
