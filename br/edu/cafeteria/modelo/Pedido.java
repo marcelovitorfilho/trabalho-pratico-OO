@@ -9,7 +9,7 @@ public class Pedido {
     private static int proximoNumero = 1000; // gerador sequencial automatico exigido
 
     private int numeroIdentificacao;
-    private String atendente;
+    private Atendente atendente;
     private Cliente cliente; // pode ser Standard, VIP ou null para compra casual
     private List<ItemPedido> itens;
     private double descontoManual;

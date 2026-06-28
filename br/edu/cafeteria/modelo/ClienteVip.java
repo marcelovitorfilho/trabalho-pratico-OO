@@ -21,6 +21,4 @@ public class ClienteVip extends Cliente {
         debitarXP(pontosNecessarios);
     }
 
-   
-
 }
