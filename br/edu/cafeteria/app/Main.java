@@ -219,10 +219,10 @@ public class Main {
             System.out.println("Erro ao finalizar pedido: " + erro.getMessage());
         }
 
-        System.out.println("Deseja realizar outra compra ? (Sim ou Não ?): ");
+        System.out.println("Deseja realizar outra compra ? (SIM ou NÃO ?): ");
         continuar = scanner.nextLine().trim().toUpperCase();
         
-        }while (continuar.equals("Sim"));
+        }while (continuar.equals("SIM"));
 
         System.out.println("Agradeço pela compra. Até logo!");
         scanner.close();
