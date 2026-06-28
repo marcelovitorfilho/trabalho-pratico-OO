@@ -38,13 +38,5 @@ public class Cliente {
         adicionarXP(pontos);
     }
 
-    public void pagarComXp(double valorCompra) throws PontosInsuficientesException {
-        int pontosNecessarios = (int) Math.ceil(valorCompra * 10);
 
-        if (saldoXP < pontosNecessarios) {
-            throw new PontosInsuficientesException("XP insuficiente para pagar o pedido.");
-        }
-
-        saldoXP -= pontosNecessarios;
-    }
 }
