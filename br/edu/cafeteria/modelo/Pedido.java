@@ -7,88 +7,61 @@ import java.util.List;
 
 public class Pedido {
     //============================================
-    // SISTEMA DE VENDAS - Pedido
+    // SISTEMA DE VENDAS - Cliente casual 
     // ===========================================
-
-    private static int proximoNumero = 1000; // gerador sequencial automatico exigido
-
-    private int numeroIdentificacao;
+    
+    private static int NumeroIdentificacao = 1000; // gerador sequencial automatico exigido
     private String atendente;
     private Cliente cliente; // pode ser Casual, Standard ou VIP
-    private List<ItemPedido> itens;
+    private List<itemPedido> itens = new ArrayList<itemPedido>();
     private double descontoManual;
 
-    public Pedido(String atendente, Cliente cliente) {
-        this.numeroIdentificacao = proximoNumero;
-        proximoNumero++;
-
+    public Pedido(int numeroIdentificacao, String atendente , Cliente cliente){
+        this.NumeroIdentificacao = numeroIdentificacao;
         this.atendente = atendente;
         this.cliente = cliente;
-        this.itens = new ArrayList<>();
-        this.descontoManual = 0.0;
-    }
 
-    public void adicionarProduto(Produto produto) throws EstoqueInsuficienteException { // sobrecarga
-        adicionarProduto(produto, 1);
     }
-
-    public void adicionarProduto(Produto produto, int quantidade) throws EstoqueInsuficienteException {
-        if (produto.getQuantidadeEstoque() < quantidade) {
-            throw new EstoqueInsuficienteException("Estoque insuficiente para " + produto.getNome());
+    public void adicionarProduto(Produto p) throws EstoqueInsuficienteException{ // sobrecarga
+        adicionarProduto(p, 1);
         }
-
-        itens.add(new ItemPedido(produto, quantidade));
-    }
-
-    public double calcularValorTotal() {
-        double total = 0.0;
-
-        for (ItemPedido item : itens) {
-            total += item.getSubtotal();
+    public void adicionarProduto(Produto p, int quantidade) throws EstoqueInsuficienteException {
+        if(p.getQuantidadeestoque() < quantidade){
+            throw new EstoqueInsuficienteException("EStoque insuficiente para " + p.getNome());
         }
-
-        return Math.max(0.0, total - descontoManual);
+        itens.add(new itemPedido(p,quantidade));
     }
-
-    public void finalizarPedido(boolean usarXpComoPagamento)
-            throws EstoqueInsuficienteException, PontosInsuficientesException {
-
-        double valorFinal = calcularValorTotal();
-
-        if (usarXpComoPagamento) {
-            if (cliente == null) {
-                throw new PontosInsuficientesException("Clientes casuais nao podem usar o beneficio de XP.");
+        public double calcularValorTotal(){
+            double total = 0.0;
+            for (itemPedido item : itens){
+                total += itemPedido.getSubtotal();
             }
-
-            cliente.pagarComXp(valorFinal);
+            return Math.max(0.0, total - descontoManual);
         }
+        public void finalizarPedido(boolean UsarXpComoPagamento) throws EstoqueInsuficienteException, PontosInsuficientesException{
+            double valorFinal = calcularValorFinal();
 
-        for (ItemPedido item : itens) {
-            item.getProduto().baixarEstoque(item.getQtd());
+            if (UsarXpComoPagamento){
+                if (cliente != null){
+                    cliente.pagarComXp(valorFinal);
+                }else{
+                    throw new PontosInsuficientesException("Clientes casuais nao podem usar o beneficio de XP ");
+                }
+            }
+            for (itemPedido item : itens) {
+                item.getProduto().baixarEstoque(item.getQuantidade());
         }
-
-        if (!usarXpComoPagamento && cliente != null) {
+    if (!usarXpComoPagamento && cliente != null) {
             cliente.calcularEAdicionarXP(valorFinal);
         }
     }
-
     public void aplicarDescontoManual(double valor) {
         this.descontoManual = valor;
     }
-
-    public List<ItemPedido> getItens() {
-        return this.itens;
+    public List<ItemPedido> getItens(){ 
+        return this.itens; 
     }
-
-    public int getNumeroIdentificacao() {
-        return this.numeroIdentificacao;
+    public int getNumeroIdentificacao(){ 
+        return this.numeroIdentificacao; 
     }
-
-    public String getAtendente() {
-        return this.atendente;
-    }
-
-    public Cliente getCliente() {
-        return this.cliente;
-    }
-}
+        }
