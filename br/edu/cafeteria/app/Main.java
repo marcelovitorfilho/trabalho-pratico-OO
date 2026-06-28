@@ -222,7 +222,7 @@ public class Main {
         System.out.println("Deseja realizar outra compra ? (sim ou nao ?): ");
         continuar = scanner.nextLine().trim().toUpperCase();
         
-        }while (continuar.equals("sim"));
+        }while (continuar.equals("SIM"));
 
         System.out.println("Agradeço pela compra. Até logo!");
         scanner.close();
