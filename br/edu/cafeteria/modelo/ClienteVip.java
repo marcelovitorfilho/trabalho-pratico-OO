@@ -13,7 +13,7 @@ public class ClienteVip extends Cliente {
     public void pagarComXp(double valorCompra) throws PontosInsuficientesException {
         int pontosNecessarios = (int) Math.ceil(valorCompra * 10);
 
-        if (saldoXP < pontosNecessarios) {
+        if (getSaldoXP() < pontosNecessarios) {
             throw new PontosInsuficientesException("XP insuficiente para pagar o pedido.");
         }
 
