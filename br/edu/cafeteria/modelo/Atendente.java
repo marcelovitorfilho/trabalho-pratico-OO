@@ -2,9 +2,9 @@ package br.edu.cafeteria.modelo;
 
 public class Atendente {
     private String nome;
-    private String registroFuncionario;
+    private int registroFuncionario;
 
-    public Atendente(String nome, String registroFuncionario) {
+    public Atendente(String nome, int registroFuncionario) {
         this.nome = nome;
         this.registroFuncionario = registroFuncionario;
     }
@@ -13,7 +13,7 @@ public class Atendente {
         return nome;
     }
 
-    public String getRegistroFuncionario() {
+    public int getRegistroFuncionario() {
         return registroFuncionario;
     }
 }

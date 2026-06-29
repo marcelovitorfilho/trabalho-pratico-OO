@@ -40,7 +40,7 @@ public class Main {
         cadastroClientes.cadastrarCliente(marcelo);
         cadastroClientes.cadastrarCliente(thiago);
 
-        Atendente profissional1 = new Atendente("André", "001");
+        Atendente profissional1 = new Atendente("André", 001);
 
         System.out.println("Bem-vindo à Cafeteria Geek Byte & Brew!");
        
